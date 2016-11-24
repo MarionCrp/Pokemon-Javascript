@@ -1,0 +1,103 @@
+@media print {
+
+  /*GENERAL*/
+
+  html, body {
+    margin: 0;
+   }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  h1 {
+    color: #A3C9A8;
+    font-size: 2em;
+  }
+
+  h2 {
+    color: #1E2F34;
+    font-size: 1.5em;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  section, aside {
+    border: #A3C9A8 solid 2px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  /* NAVIGATION Non affichée*/
+  nav {
+    display: none;
+  }
+
+  /* TABLE */
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th {
+    color: #1E2F34;
+    border-bottom: #A3C9A8 solid 2px;
+    padding: 5px;
+  }
+
+  td {
+    padding : 5px;
+    text-align: center;
+    border-bottom: #A3C9A8 solid 2px;
+  }
+
+  td:nth-child(4){
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1E2F34;
+  }
+
+  td:last-child {
+    text-align: justify;
+  }
+
+  /* SHOW TOGEPI/SALAMECHE */
+
+  caption {
+    font-size: 0.75em;
+    text-align: right;
+    color: #DDD8C4;
+  }
+
+
+  div img {
+    display: flex;
+    margin: auto;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  aside article{
+    margin: 15px;
+    padding:  3px;
+  }
+
+
+  ul span {
+    font-weight: bold;
+  }
+
+  /* FOOTER */
+  #copyright{
+    font-size: 0.95em;
+    text-align: center;
+    color: #DDD8C4;
+  }
+  #copyright:before{
+    content: " © copyright"
+  }
+}

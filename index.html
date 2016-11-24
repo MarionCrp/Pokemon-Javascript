@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head lang="fr">
+    <meta charset="utf-8"/>
+    <meta name="author" content="Marion Craipeau" />
+    <meta name="keywords" content="pokedex, pokemon" />
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" href="css/style_smartphone.css" media="(max-device-width : 480px)">
+    <link rel="stylesheet" href="css/style_print.css" media="print">
+    <script type="text/javascript" src="pokemon.js"></script>
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <nav>
+      <div class="menuItem" id="menu-index"> Accueil
+        <ul>
+          <li class="menuElement"><a href="index.html" class="active-link">Pokedex</a></li>
+        </ul>
+      </div>
+      <div class="menuItem" id="menu-pokemons"> Mes Pokemon
+        <ul>
+          <li class="menuElement"><a href="salameche.html">Salameche</a></li>
+          <li class="menuElement"><a href="togepi.html">Togepi</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-body">
+      <article>
+        <h1>Mon Pokedex</h1>
+        <section id="presentation_pokedex">
+          <h2>Mais qu'est-ce qu'un Pokédex?</h2>
+          <p>
+            Le pokedex contient les informations sur les pokemons que tu as rencontrés! Voici la liste des 6 premiers Pokémon :
+          </p>
+        </section>
+        <section id="pokedex">
+          <h2>Mes Pokémons</h2>
+          <table id="pokemons_list">
+            <caption>Pokédex (08/11/2016)</caption>
+            <tr>
+              <th>Numéro</th>
+              <th>Element</th>
+              <th>Photo</th>
+              <th>Nom</th>
+              <th>Description</th>
+            </tr>
+          </table>
+        </section>
+      </article>
+    </div>
+    <footer><p id="copyright"> Marion CRAIPEAU</p></footer>
+  </body>
+
+</html>

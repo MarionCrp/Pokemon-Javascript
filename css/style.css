@@ -1,0 +1,183 @@
+/* GENERAL */
+html, body {
+  margin: 0;
+}
+
+body {
+  background-color: #50808E;
+  margin-top: 70px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+h1 {
+  color: #A3C9A8;
+  font-size: 2em;
+}
+
+h2 {
+  color: #1E2F34;
+  font-size: 1.5em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #50808E;
+}
+
+section, aside {
+  background-color: #69A297;
+  border: #A3C9A8 solid 2px;
+  margin: 20px 20px;
+  padding: 20px;
+}
+
+.page-body {
+  margin:70px 100px;
+}
+
+/* MENU NAVIGATION */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #1E2F34;
+  z-index: 1;
+}
+
+nav div {
+  font-size: 1.1em;
+  color: #A3C9A8;
+  text-align: center;
+  padding: 0 15px;
+  padding-top: 10px;
+  height: 100px;
+}
+
+#menu-index:hover ul, #menu-pokemons:hover ul {
+  display: block;
+  height: 100px;
+  background-color: #1E2F34;
+}
+
+nav ul {
+  padding: 0;
+  margin-top: 7px;
+  line-height: 25px;
+  display: none;
+}
+
+.active-link, a:hover {
+  color: #DDD8C4;
+  font-weight: bold
+}
+
+/* TABLE */
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  color: #1E2F34;
+  border-bottom: #A3C9A8 solid 2px;
+  padding: 20px;
+}
+
+td {
+  padding : 20px;
+  text-align: center;
+}
+
+td:nth-child(4){
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1E2F34;
+}
+
+td:last-child {
+  text-align: justify;
+}
+
+caption {
+  font-size: 0.75em;
+  text-align: right;
+    color: #DDD8C4;
+}
+
+/* POKEMON TYPE*/
+
+td:nth-child(2){
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  bottom: 15px;
+}
+
+td:nth-child(2) span {
+  position:relative;
+  top: 45px;
+  font-size: 1.1em;
+}
+
+.faery {
+  background-image: url("../pictures/feary_icone.jpg");
+  color: #CE5C7F;
+}
+.fire {
+  background-image: url("../pictures/fire_icone.jpg");
+  color: #C45217;
+}
+.water {
+  background-image: url("../pictures/water_icone.jpg");
+  color: #4A7AAD;
+}
+.normal {
+  background-image: url("../pictures/normal_icone.jpg");
+  color: #8E8072;
+}
+
+/* FOOTER */
+#copyright{
+  font-size: 0.95em;
+  text-align: center;
+  color: #DDD8C4;
+}
+#copyright:before{
+  content: " © copyright"
+}
+
+/* SHOW TOGEPI/ SALAMECHE*/
+
+div img {
+  display: flex;
+  margin: auto;
+}
+
+.content {
+  display: flex;
+}
+
+aside article{
+  background-color: #A3C9A8;
+  margin: 15px;
+  padding:  3px;
+}
+
+.main-desc {
+  display: flex;
+}
+
+ul span {
+  font-weight: bold;
+}

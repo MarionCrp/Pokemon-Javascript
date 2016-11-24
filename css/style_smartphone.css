@@ -1,0 +1,15 @@
+@media (max-device-width : 480px) {
+  table td:last-child{
+    float: right ;
+  }
+
+  td {
+    padding: 5px;
+    font-size: 1.2em;
+    border-bottom: #A3C9A8 solid 2px;
+  }
+
+  .content, .main-desc {
+    display: block;
+  }
+}

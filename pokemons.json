@@ -1,0 +1,50 @@
+{
+  "pokemons": [
+    { "id": "#175",
+      "name": "Togepi",
+      "type": "faery",
+      "picture": "/pictures/togepi.png",
+      "href": "togepi.html",
+      "description": "L'énergie vitale de Togepi provient des émotions positives et heureuses exprimé par les gens et les Pokémons. On dit même que sa coquille est remplie de joie. Si jamais il ne ressent que haine et désespoir, il finit par mourir. « Qui fait tenir debout un Togepi endormi aura la chance pour lui… »"
+    },
+
+    { "id": "#004",
+      "name": "Salamèche",
+      "type": "fire",
+      "picture": "/pictures/salameche.png",
+      "href": "salameche.html",
+      "description": "De récentes études prouvent que la flamme qui brûle sur la queue de Salamèche indique son état de santé, mais aussi son caractère. S'il se sent faible, la flamme sera toute petite. Et si par malheur sa flamme s'éteint, il meurt, car c'est le seul moyen pour lui de se refroidir."
+    },
+
+    { "id": "#054",
+      "name": "Psykokwak",
+      "type": "water",
+      "picture": "/pictures/psykokwak.png",
+      "href": "#",
+      "description": "Psykokwak est un étrange Pokémon mi-aquatique, mi-psy. Ce pauvre Pokémon a la migraine en permanence, et quand celle-ci atteint son paroxysme, il utilise de puissants pouvoirs psy sans s'en rendre compte. Il maîtrise alors l'attaque Choc mental avec perfection."
+    },
+
+    { "id": "#129",
+      "name": "Magicarpe",
+      "type": "water",
+      "picture": "/pictures/magicarpe.jpg",
+      "href": "#",
+      "description": "On raconte qu'autrefois, Magicarpe était beaucoup plus puissant qu'aujourd'hui. Il ne sait faire que des ronds et des bonds dans l'eau. Il est malheureusement devenu célèbre pour son inutilité…cet étrange Pokémon a poussé de nombreux chercheurs a étudier son cas, mais aucune théorie plausible n'a été avancée."
+    },
+
+    { "id": "#143",
+      "name": "Ronflex",
+      "type": "normal",
+      "picture": "/pictures/ronflex.png",
+      "href": "#",
+      "description": "Ronflex est un Pokémon très pacifique, mais très paresseux aussi. Ses principales préoccupations de la journée sont dormir et manger. Son incroyable estomac est capable de digérer n'importe quoi, même le plus mortel des poisons. Ce Pokémon préfère faire la sieste plutôt que de se battre."
+    },
+
+    { "id": "#038",
+      "name": "Feunard",
+      "type": "fire",
+      "picture": "/pictures/feunard.png",
+      "href": "#",
+      "description": "Feunard a longtemps été vénéré, car les gens pensaient qu'il était légendaire. C'est un Pokémon gracieux, dont les nombreuses queues se balancent au rythme de ses pas légers. Beaucoup de dresseurs convoitent Feunard, pour sa beauté et pour sa puissance au combat."
+    }
+]}
