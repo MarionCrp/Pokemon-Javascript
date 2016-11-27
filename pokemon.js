@@ -1,5 +1,5 @@
 // DATAS
-function Pokemon(id, name, type, picture, href, description, gender = null, weight = null, height = null, special_capacities = []){
+function Pokemon(id, name, type, picture, href = null, description = null, gender = null, weight = null, height = null, special_capacities = [], family = []){
   this.id = id;
   this.href = href;
   this.name = name;
@@ -14,6 +14,11 @@ function Pokemon(id, name, type, picture, href, description, gender = null, weig
   for(i in special_capacities){
     this.special_capacities.push(new SpecialCapacity(special_capacities[i]['title'], special_capacities[i]['description']));
   }
+  this.family = [];
+  for(i in family){
+    this.family.push(new Pokemon(family[i].id, family[i].name, family[i].type, family[i].picture));
+  }
+
 }
 
 function SpecialCapacity(title, description){

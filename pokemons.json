@@ -15,15 +15,25 @@
         { "title": "Agitation ", "description": "Augmente votre attaque de 50% mais baisse votre précision de 20%."
         },
         { "title": "Chanceux  ", "description": " Le taux de coup critique du Pokémon est augmenté d'un niveau."
-        }]
+        }],
+      "family": [ "#004", "#177" ]
     },
 
     { "id": "#004",
-      "name": "Salamèche",
+      "name": "Salameche",
       "type": "fire",
       "picture": "/pictures/salameche.png",
       "href": "salameche.html",
-      "description": "De récentes études prouvent que la flamme qui brûle sur la queue de Salamèche indique son état de santé, mais aussi son caractère. S'il se sent faible, la flamme sera toute petite. Et si par malheur sa flamme s'éteint, il meurt, car c'est le seul moyen pour lui de se refroidir."
+      "description": "De récentes études prouvent que la flamme qui brûle sur la queue de Salamèche indique son état de santé, mais aussi son caractère. S'il se sent faible, la flamme sera toute petite. Et si par malheur sa flamme s'éteint, il meurt, car c'est le seul moyen pour lui de se refroidir.",
+      "height": "0.6",
+      "weight": "8,5",
+      "gender": "M/F",
+      "special_capacities": [
+        { "title": "Brasier ", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
+        },
+        { "title": "Force Soleil ", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
+        }],
+      "family": [ "#175" ]
     },
 
     { "id": "#054",
