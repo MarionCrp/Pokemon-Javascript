@@ -5,7 +5,17 @@
       "type": "faery",
       "picture": "/pictures/togepi.png",
       "href": "togepi.html",
-      "description": "L'énergie vitale de Togepi provient des émotions positives et heureuses exprimé par les gens et les Pokémons. On dit même que sa coquille est remplie de joie. Si jamais il ne ressent que haine et désespoir, il finit par mourir. « Qui fait tenir debout un Togepi endormi aura la chance pour lui… »"
+      "description": "L'énergie vitale de Togepi provient des émotions positives et heureuses exprimé par les gens et les Pokémons. On dit même que sa coquille est remplie de joie. Si jamais il ne ressent que haine et désespoir, il finit par mourir. « Qui fait tenir debout un Togepi endormi aura la chance pour lui… »",
+      "height": "0.3",
+      "weight": "1.5",
+      "gender": "M/F",
+      "special_capacities": [
+        { "title": "Sérénité", "description": "Double la réussite aux effets des attaques lancées."
+        },
+        { "title": "Agitation ", "description": "Augmente votre attaque de 50% mais baisse votre précision de 20%."
+        },
+        { "title": "Chanceux  ", "description": " Le taux de coup critique du Pokémon est augmenté d'un niveau."
+        }]
     },
 
     { "id": "#004",
