@@ -59,24 +59,6 @@ function set_property_row_attributes(property, cell, pokemon){
   }
 }
 
-// MENU
-function set_pokemon_menu(data_pokemons){
-  menu = document.getElementById("menu-pokemons");
-  var list = document.createElement("ul");
-  for(pokemon in data_pokemons){
-    attributes = data_pokemons[pokemon];
-    var pokemon_to_list = new Pokemon(attributes.id, attributes.name, attributes.type, attributes.picture, attributes.href, attributes.description);
-    list_element = document.createElement("li");
-    list_element.className = "menuElement";
-    link = document.createElement("a");
-    link.href = pokemon_to_list.href;
-    link.innerHTML = pokemon_to_list.name;
-    list_element.appendChild(link);
-    list.appendChild(list_element);
-  }
-  menu.appendChild(list);
-}
-
 function parseJson(){
   var req = new XMLHttpRequest();
   req.open("GET", "pokemons.json", true);

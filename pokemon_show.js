@@ -1,16 +1,16 @@
 function find_pokemon_by_params(){
-  pokemon_name = getParameterValue("pokemon");
+  var pokemon_name = getParameterValue("pokemon");
 
   // On PARSE LE JSON ET ON BOUCLE DANS LA LISTE DE POKEMON POUR TROUVER LE BON
   var req = new XMLHttpRequest();
   req.open("GET", "pokemons.json", true);
-  toto = "xx"
   req.onerror = function(){
     console.log("Echec de chargement du fichier pokemons.json");
   }
   req.onreadystatechange = (function(){
     if(req.readyState == 4 && (req.status == 200 || req.status == 0)){
       var Data = JSON.parse(req.responseText);
+      set_pokemon_menu(Data["pokemons"], pokemon_name);
       for(pokemon in Data["pokemons"]){
         if(Data["pokemons"][pokemon].name == pokemon_name){
           var attributes = Data["pokemons"][pokemon];
@@ -47,6 +47,10 @@ function find_pokemon_by_params(){
         }
       }
       if(selected_pokemon != null){
+
+        // Intégration du titre
+        document.getElementsByTagName('h1')[0].innerHTML = selected_pokemon.name;
+
         // Intégration de l'image
         picture = document.getElementsByClassName('main-desc')[0].getElementsByTagName('img')[0]
         picture.src = "pictures/" + selected_pokemon.name + ".png";
@@ -100,9 +104,10 @@ function find_pokemon_by_params(){
           document.getElementsByTagName('aside')[0].appendChild(list_article)
         }
       }
-
     }
+
   });
+
   req.send(null);
 }
 
