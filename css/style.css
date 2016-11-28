@@ -12,7 +12,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
-h1 {
+h1, .pokemon-show h2 {
   color: #A3C9A8;
   font-size: 2em;
 }
