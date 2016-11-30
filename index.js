@@ -83,6 +83,7 @@ function set_property_row_attributes(property, cell, pokemon){
       cell.replaceChild(link, content);
       cell.addEventListener("click",function(event){
         pokemon_to_show = document.getElementById("pokemon_" + pokemon.id)
+        active_link_from_picture(pokemon.name);
         hide(document.getElementById("pokemon-index"))
         show(pokemon_to_show);
       });
@@ -218,6 +219,7 @@ function set_show(selected_pokemon){
       evol_figure.addEventListener("click",function(){
          pokemon_to_show = document.getElementById("pokemon_" + selected_pokemon.family[i].id)
          current_pokemon_to_hide = document.getElementById("pokemon_" + selected_pokemon.id)
+         active_link_from_picture(selected_pokemon.family[i].name);
          hide(current_pokemon_to_hide)
          show(pokemon_to_show);
       });
@@ -248,15 +250,22 @@ function set_show(selected_pokemon){
 }
 
 function hide(element){
-  element.className = "to-hide";
+    element.classList.add('to-hide');
+    if(element.classList.contains('to-show')){
+       element.classList.remove('to-show');
+    }
 }
 
 function show(element){
-   element.className = "to-show";
-
+  pokemon_name = element.getElementsByTagName('h2')[0].innerHTML;
+  element.classList.add('to-show');
+  if(element.classList.contains('to-hide')){
+     element.classList.remove('to-hide');
+  }
 }
 
 // ONLOAD
 window.addEventListener("load", function() {
   parseJson();
+  pokedex_link();
 });
