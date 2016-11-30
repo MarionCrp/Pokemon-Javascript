@@ -41,6 +41,7 @@ function set_pokedex(data_pokemons){
    }
    tab_body.appendChild(create_pokemon_row(pokemon_to_create));
    set_show(pokemon_to_create);
+   set_menu_element(pokemon_to_create);
   }
 }
 
@@ -81,8 +82,9 @@ function set_property_row_attributes(property, cell, pokemon){
       link.appendChild(picture);
       cell.replaceChild(link, content);
       cell.addEventListener("click",function(event){
-         document.getElementById("pokemon-index").style.display = "none";
-         document.getElementById("pokemon_" + pokemon.id).style.display = "visible";
+        pokemon_to_show = document.getElementById("pokemon_" + pokemon.id)
+        hide(document.getElementById("pokemon-index"))
+        show(pokemon_to_show);
       });
 
     default:
@@ -100,9 +102,9 @@ function parseJson(){
     if(req.readyState == 4 && (req.status == 200 || req.status == 0)){
       var Data = JSON.parse(req.responseText);
       set_pokemon_nb(Data["pokemons"]);
-      set_pokemon_menu(Data["pokemons"]);
+      // set_pokemon_menu(Data["pokemons"]);
       set_pokedex(Data["pokemons"]);
-      set_list_show(Data["pokemons"]);
+      //set_list_show(Data["pokemons"]);
     } else {
       //alert("Not ready yet");
     }
@@ -111,9 +113,11 @@ function parseJson(){
 }
 
 function set_show(selected_pokemon){
-  // Intégration du titre
+
+  // Intégration de la description princpale
   div_principale = document.createElement('div');
   div_principale.id = "pokemon_" + selected_pokemon.id;
+  hide(div_principale);
   title = document.createElement('h2');
   title.innerHTML = selected_pokemon.name;
   page_body = document.createElement('div');
@@ -124,6 +128,7 @@ function set_show(selected_pokemon){
   article.className = "main-desc";
 
   section = document.createElement('section');
+  section.appendChild(title);
 
   // Intégration de l'image
   div_image = document.createElement('div');
@@ -201,42 +206,53 @@ function set_show(selected_pokemon){
     title_evol.innerHTML = "Evolution";
   }
 
-  for(i in selected_pokemon.family){
-    list_article = document.createElement("article");
-    evol_title = document.createElement("h3");
-    evol_title.innerHTML = selected_pokemon.family[i].name;
-    evol_figure = document.createElement("figure");
-    evol_picture = document.createElement("img");
-    evol_picture.width = "100";
-    evol_picture.height = "100";
-    evol_figure.appendChild(evol_picture);
-    evol_figure.addEventListener("click",function(){
-       window.open("show.html?pokemon=" + selected_pokemon.family[i].name);
-    });
-    evol_picture.src = selected_pokemon.family[i].picture;
-    evol_picture.alt = selected_pokemon.family[i].name;
-    evol_picture.width = "100";
-    evol_ul = document.createElement("ul");
-    evol_id = document.createElement("li");
-    evol_id.innerHTML = "<span> N°: </span>" + selected_pokemon.family[i].id;
-    evol_type = document.createElement("li");
-    evol_type.innerHTML = "<span> Type: </span>" + type_translate(selected_pokemon.family[i].type);
-    evol_ul.appendChild(evol_id);
-    evol_ul.appendChild(evol_type);
+  for(i in selected_pokemon.family){ (function(i) {
+      list_article = document.createElement("article");
+      evol_title = document.createElement("h3");
+      evol_title.innerHTML = selected_pokemon.family[i].name;
+      var evol_figure = document.createElement("figure");
+      evol_picture = document.createElement("img");
+      evol_picture.width = "100";
+      evol_picture.height = "100";
+      evol_figure.appendChild(evol_picture);
+      evol_figure.addEventListener("click",function(){
+         pokemon_to_show = document.getElementById("pokemon_" + selected_pokemon.family[i].id)
+         current_pokemon_to_hide = document.getElementById("pokemon_" + selected_pokemon.id)
+         hide(current_pokemon_to_hide)
+         show(pokemon_to_show);
+      });
+      evol_picture.src = selected_pokemon.family[i].picture;
+      evol_picture.alt = selected_pokemon.family[i].name;
+      evol_picture.width = "100";
+      evol_ul = document.createElement("ul");
+      evol_id = document.createElement("li");
+      evol_id.innerHTML = "<span> N°: </span>" + selected_pokemon.family[i].id;
+      evol_type = document.createElement("li");
+      evol_type.innerHTML = "<span> Type: </span>" + type_translate(selected_pokemon.family[i].type);
+      evol_ul.appendChild(evol_id);
+      evol_ul.appendChild(evol_type);
 
-    list_article.appendChild(evol_title);
-    list_article.appendChild(evol_figure);
-    list_article.appendChild(evol_ul);
+      list_article.appendChild(evol_title);
+      list_article.appendChild(evol_figure);
+      list_article.appendChild(evol_ul);
 
-    aside.appendChild(list_article)
+      aside.appendChild(list_article)
+    }(i));
   }
 
   content.appendChild(article);
   content.appendChild(aside);
   page_body.appendChild(content);
-  div_principale.appendChild(title);
   div_principale.appendChild(page_body);
   document.getElementById('pokemon-show').appendChild(div_principale);
+}
+
+function hide(element){
+  element.className = "to-hide";
+}
+
+function show(element){
+   element.className = "to-show";
 
 }
 

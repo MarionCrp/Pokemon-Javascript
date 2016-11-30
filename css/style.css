@@ -38,7 +38,7 @@ section, aside {
   padding: 20px;
 }
 
-.page-body {
+#pokemon-index, #pokemon-show {
   margin:70px 100px;
 }
 
@@ -174,15 +174,14 @@ aside article{
   padding:  3px;
 }
 
-#pokemon-show {
-  padding: 20px;
-  margin: 20px 20px;
-}
-
 .main-desc {
   display: flex;
 }
 
 ul span {
   font-weight: bold;
+}
+
+.to-hide {
+  display: none;
 }
