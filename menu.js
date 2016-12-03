@@ -5,11 +5,10 @@ function set_menu_element(pokemon_to_list){
   link = document.createElement("a");
   link.href = "#";
   link.addEventListener("click", function(){
+    hide_all_show_pokemon();
     index = document.getElementById('pokemon-index');
     active_link(this);
     if(index.className == "to-hide"){
-      actual_pokemon = document.getElementsByClassName('to-show')[0]
-      hide(actual_pokemon);
       pokemon_to_show = document.getElementById('pokemon_' + pokemon_to_list.id);
       show(pokemon_to_show);
     } else {
@@ -37,7 +36,9 @@ function pokedex_link(){
     while(document.getElementsByClassName('to-show').length > 0){
       hide(document.getElementsByClassName('to-show')[0]);
     }
+
     show(document.getElementById('pokemon-index'));
+    show_all_pokemon_in_pokedex();
   });
 }
 

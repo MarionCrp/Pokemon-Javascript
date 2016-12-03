@@ -270,10 +270,24 @@ function hide_current_shown_pokemon(){
   }
 }
 
+function hide_all_show_pokemon(){
+    var show_pokemons = document.getElementById("pokemon-show").getElementsByClassName("to-show");
+    for(var i = 0; i < show_pokemons.length; i++){
+      hide(show_pokemons[i]);
+    }
+}
+
 function show(element){
   element.classList.add('to-show');
   if(element.classList.contains('to-hide')){
      element.classList.remove('to-hide');
+  }
+}
+
+function show_all_pokemon_in_pokedex(){
+  var pokedex_rows = document.getElementById('pokedex').querySelectorAll("tr:not(.main_line)");
+  for(var i = 0; i < pokedex_rows.length; i++){
+    show(pokedex_rows[i]);
   }
 }
 
