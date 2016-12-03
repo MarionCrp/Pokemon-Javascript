@@ -64,21 +64,23 @@ PokemonRow.prototype.valid_the_condition = function(condition){
   var concerned_cell_content = this[condition.key + "_content"];
   if(condition.is_valid){
     if(condition.is_numeric()){
+      var condition_value = Number(condition.value);
+      concerned_cell_content = Number(concerned_cell_content);
       switch (condition.operator) {
         case "=":
-          return concerned_cell_content == condition.value;
+          return concerned_cell_content == condition_value;
           break;
         case "<":
-          return concerned_cell_content < condition.value;
+          return concerned_cell_content < condition_value;
           break;
         case ">":
-          return concerned_cell_content > condition.value;
+          return concerned_cell_content > condition_value;
           break;
         case "<=":
-          return concerned_cell_content <= condition.value;
+          return concerned_cell_content <= condition_value;
           break;
         case ">=":
-          return concerned_cell_content >= condition.value;
+          return concerned_cell_content >= condition_value;
           break;
 
         default:
@@ -139,7 +141,18 @@ function parse_and_search_requested_string(requested_string, pokemon_rows){
     else {
       // Si c'est une condition multiple :
       if(new MultipleCondition(requested_string).is_valid()){
-
+        for(var i = 0; i < pokemon_rows.length; i++){
+          var row = new PokemonRow(pokemon_rows[i]);
+          var multi_conditions = new MultipleCondition(requested_string);
+          if(multi_conditions.operator == "&"){
+            for(var j = 0; j < multi_conditions.conditions.length; j++){
+              if(!row.valid_the_condition(multi_conditions.conditions[j])){
+                row.hide();
+                break;
+              }
+            }
+          }
+        }
       }
       // Si c'est une condition simple :
       else if(new Condition(requested_string).is_valid()){
