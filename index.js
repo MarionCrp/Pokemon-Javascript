@@ -7,6 +7,7 @@ function set_pokemon_nb(pokemons){
 // INDEX POKEDEX
 function set_pokedex(data_pokemons){
   var tab_body = document.getElementsByTagName("tbody")[0];
+  var types = [];
   for(pokemon in data_pokemons){
     attributes = data_pokemons[pokemon];
 
@@ -40,14 +41,23 @@ function set_pokedex(data_pokemons){
                                         evolutions);
    }
    tab_body.appendChild(create_pokemon_row(pokemon_to_create));
+
+   // On liste les différents types de pokemon
+   if(types.indexOf(pokemon_to_create.type) === -1 ){
+     types.push(pokemon_to_create.type);
+   }
    set_show(pokemon_to_create);
    set_menu_element(pokemon_to_create);
   }
+
+  // On rempli les options du select "type" possibles dans le formulaire :
+  //
+  set_option_elements(types);
 }
 
 function create_pokemon_row(pokemon){
   var pokemon_row = document.createElement("tr");
-  var attributes = ['id', 'type', 'picture', 'name', 'description'];
+  var attributes = ['id', 'type', 'picture', 'name', 'height', 'weight', 'description'];
   for(var i = 0; i < attributes.length; i++){
     var cell = document.createElement("td");
     cell.innerHTML = pokemon[attributes[i]];
@@ -103,9 +113,7 @@ function parseJson(){
     if(req.readyState == 4 && (req.status == 200 || req.status == 0)){
       var Data = JSON.parse(req.responseText);
       set_pokemon_nb(Data["pokemons"]);
-      // set_pokemon_menu(Data["pokemons"]);
       set_pokedex(Data["pokemons"]);
-      //set_list_show(Data["pokemons"]);
     } else {
       //alert("Not ready yet");
     }
@@ -257,15 +265,20 @@ function hide(element){
 }
 
 function show(element){
-  pokemon_name = element.getElementsByTagName('h2')[0].innerHTML;
   element.classList.add('to-show');
   if(element.classList.contains('to-hide')){
      element.classList.remove('to-hide');
   }
 }
 
+var parameters;
 // ONLOAD
 window.addEventListener("load", function() {
   parseJson();
   pokedex_link();
+  on_submit();
 });
+
+var QUERY_SIGNS = ["=", "<=", ">=", "<", ">"];
+var OR_AND_SIGN = ["&", "||"];
+var POKEMON_ATTRIBUTES_FOR_RESEARCH = ["id", "name", "type", "gender", "weight", "height", "special_capacity_name"]

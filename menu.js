@@ -55,3 +55,90 @@ function active_link_from_picture(pokemon_name){
     }
   }
 }
+
+/// FORMULAIRE
+// Génère les options du "select" "type"
+function set_option_elements(types){
+  select = document.getElementsByTagName('select').type;
+  for(i in types){
+    option = document.createElement('option')
+    option.value = types[i];
+    option.innerHTML = type_translate(types[i]);
+    select.appendChild(option);
+  }
+}
+
+function get_parameters(){
+  var values = {};
+
+
+  // GET PARAMS FROM SELECT
+  select_fields = document.getElementsByTagName('select');
+  for(i = 0; i < select_fields.length; i++){
+    selected_option = select_fields[i].options[select_fields[i].selectedIndex].value;
+    values[select_fields[i].name] = selected_option;
+  }
+
+  values['words'] = document.getElementsByName('word')[0].value;
+  return values;
+}
+
+function filter(parameters){
+  // On sélectionne les lignes du tableau correspondant aux pokemon
+  rows = document.getElementById('pokedex').querySelectorAll("tr:not(.main_line)");
+
+  for(i = 0; i < rows.length; i++){
+    // On réinitialise le tableau, en réaffichant les éléments au départ, à chaque recherche
+    show(rows[i]);
+    if(parameters["type"] != "all") {
+      if(rows[i].getElementsByTagName("td")[1].className != parameters["type"]){
+        hide(rows[i]);
+      }
+    }
+
+    requested_string = parameters['words'];
+
+    if(!parse_and_search_requested_string(requested_string, rows[i])){
+      return false;
+    }
+  }
+
+  // ex: type = eau & height < 2
+  function parse_and_search_requested_string(requested_string, row){
+    if(requested_string != "") {
+      if(new MultipleCondition(requested_string).is_valid()){
+
+      } else if(new Condition(requested_string).is_valid()){
+
+      } else {
+        alert("La requête demandée n'est pas valide. Ex: 'height < 2' ou 'type = eau || weight < 0.5'");
+        return false;
+      }
+
+      cells = row.getElementsByTagName("td")
+      requested_string_concerns_the_row = false
+      for(j = 0; j < cells.length; j++){
+        // On ne cherche pas de mot sur l'élément correspond à l'image (la troisième case)
+        if(j != 2){
+          if(cells[j].innerHTML.toLowerCase().includes(requested_string.toLowerCase())){
+            requested_string_concerns_the_row = true;
+
+          }
+        }
+      }
+      if(!requested_string_concerns_the_row){
+        hide(rows[i]);
+      }
+    }
+  }
+
+
+}
+
+function on_submit(){
+  submit_button = document.getElementsByTagName('input').chercher;
+  submit_button.addEventListener('click', function(){
+  parameters = get_parameters();
+  filter(parameters);
+  });
+}

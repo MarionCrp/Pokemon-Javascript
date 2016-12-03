@@ -8,12 +8,24 @@
     <link rel="stylesheet" href="css/style_smartphone.css" media="(max-device-width : 480px)">
     <link rel="stylesheet" href="css/style_print.css" media="print">
     <script type="text/javascript" src="pokemon.js"></script>
+    <script type="text/javascript" src="parser.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="menu.js"></script>
     <title>Pokedex</title>
   </head>
   <body>
     <nav>
+
+      <div id="search_form">
+        <!-- <form class="" action="#" method=""> -->
+          <input type="text" name="word" value="">
+          <select name="type">
+            <option value="all" selected>Tous</option>
+          </select>
+          <input type="submit" name="chercher" value="Chercher">
+        <!-- </form> -->
+      </div>
+
       <div class="menuItem" id="menu-index"> Accueil
         <ul>
           <li id="pokedex_link" class="menuElement"><a href="#" class="active-link">Pokedex</a></li>
@@ -25,12 +37,6 @@
         </ul>
       </div>
     </nav>
-
-    <div id="search_form">
-      <form class="" action="index.html" method="get">
-
-      </form>
-    </div>
 
     <div id="pokemon-index">
       <div class="page-body">
@@ -46,11 +52,13 @@
             <h2>Mes Pokémons</h2>
             <table id="pokemons_list">
               <caption>Pokédex (08/11/2016)</caption>
-              <tr>
+              <tr class="main_line">
                 <th>Numéro</th>
                 <th>Element</th>
                 <th>Photo</th>
                 <th>Nom</th>
+                <th>Taille (m)</th>
+                <th>Poids (kg)</th>
                 <th>Description</th>
               </tr>
             </table>
