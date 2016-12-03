@@ -62,7 +62,7 @@ function set_option_elements(types){
   select = document.getElementsByTagName('select').type;
   for(i in types){
     option = document.createElement('option')
-    option.value = types[i];
+    option.value = type_translate(types[i]);
     option.innerHTML = type_translate(types[i]);
     select.appendChild(option);
   }
@@ -84,61 +84,21 @@ function get_parameters(){
 }
 
 function filter(parameters){
+  requested_string = parameters['words'];
   // On sélectionne les lignes du tableau correspondant aux pokemon
   rows = document.getElementById('pokedex').querySelectorAll("tr:not(.main_line)");
-
-  for(i = 0; i < rows.length; i++){
-    // On réinitialise le tableau, en réaffichant les éléments au départ, à chaque recherche
-    show(rows[i]);
-    if(parameters["type"] != "all") {
-      if(rows[i].getElementsByTagName("td")[1].className != parameters["type"]){
-        hide(rows[i]);
-      }
-    }
-
-    requested_string = parameters['words'];
-
-    if(!parse_and_search_requested_string(requested_string, rows[i])){
-      return false;
-    }
-  }
-
-  // ex: type = eau & height < 2
-  function parse_and_search_requested_string(requested_string, row){
-    if(requested_string != "") {
-      if(new MultipleCondition(requested_string).is_valid()){
-
-      } else if(new Condition(requested_string).is_valid()){
-
-      } else {
-        alert("La requête demandée n'est pas valide. Ex: 'height < 2' ou 'type = eau || weight < 0.5'");
-        return false;
-      }
-
-      cells = row.getElementsByTagName("td")
-      requested_string_concerns_the_row = false
-      for(j = 0; j < cells.length; j++){
-        // On ne cherche pas de mot sur l'élément correspond à l'image (la troisième case)
-        if(j != 2){
-          if(cells[j].innerHTML.toLowerCase().includes(requested_string.toLowerCase())){
-            requested_string_concerns_the_row = true;
-
-          }
-        }
-      }
-      if(!requested_string_concerns_the_row){
-        hide(rows[i]);
-      }
-    }
-  }
-
-
+  parse_and_search_requested_string(requested_string, rows);
 }
 
 function on_submit(){
+  // On vide notre tableau d'erreur au cas où il en contiendrait.
+  errors = [];
   submit_button = document.getElementsByTagName('input').chercher;
   submit_button.addEventListener('click', function(){
+  hide_current_shown_pokemon();
+  show(document.getElementById("pokemon-index"));
   parameters = get_parameters();
   filter(parameters);
+  if(errors.length > 0) alert(errors[0]);
   });
 }

@@ -45,3 +45,24 @@ function type_translate(type){
       break;
   }
 }
+
+function attribute_translate(attribute){
+  if(["élément", "element", "élement", "type"].includes(attribute)) return "type";
+  else {
+    switch (attribute) {
+      case "nom":
+        return "name"
+        break;
+      case "taille":
+        return "height"
+        break;
+      case "poids":
+        return "weight"
+        break;
+      default:
+        errors.push("Cet attribut n'existe pas");
+        return null;
+        break;
+    }
+  }
+}

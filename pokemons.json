@@ -16,7 +16,7 @@
         },
         { "title": "Chanceux  ", "description": " Le taux de coup critique du Pokémon est augmenté d'un niveau."
         }],
-      "family": [ "#004", "#177" ]
+      "family": [ "#177","#468" ]
     },
 
     { "id": "#004",
@@ -26,12 +26,12 @@
       "href": "salameche.html",
       "description": "De récentes études prouvent que la flamme qui brûle sur la queue de Salamèche indique son état de santé, mais aussi son caractère. S'il se sent faible, la flamme sera toute petite. Et si par malheur sa flamme s'éteint, il meurt, car c'est le seul moyen pour lui de se refroidir.",
       "height": "0.6",
-      "weight": "8,5",
+      "weight": "8.5",
       "gender": "M/F",
       "special_capacities": [
-        { "title": "Brasier ", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
+        { "title": "Brasier", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
         },
-        { "title": "Force Soleil ", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
+        { "title": "Force Soleil", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
         }],
       "family": [ "#175" ]
     },
@@ -42,12 +42,17 @@
       "picture": "/pictures/psykokwak.png",
       "href": "#",
       "description": "Psykokwak est un étrange Pokémon mi-aquatique, mi-psy. Ce pauvre Pokémon a la migraine en permanence, et quand celle-ci atteint son paroxysme, il utilise de puissants pouvoirs psy sans s'en rendre compte. Il maîtrise alors l'attaque Choc mental avec perfection.",
+      "height": "0.8",
+      "weight": "19.6",
+      "gender": "M/F",
       "special_capacities": [
-        { "title": "Brasier ", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
+        { "title": "Moiteur", "description": "Aucun pokémon ne peut utiliser l'attaque \"Explosion\" ou \"Destruction\""
         },
-        { "title": "Force Soleil ", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
+        { "title": "Ciel Gris", "description": "Ignore les effets du climat."
+        },
+        { "title": "Glissade", "description": "Double la vitesse sous la pluie."
         }],
-      "family": [ "#175" ]
+      "family": [ "#055" ]
     },
 
     { "id": "#129",
@@ -56,12 +61,15 @@
       "picture": "/pictures/magicarpe.jpg",
       "href": "#",
       "description": "On raconte qu'autrefois, Magicarpe était beaucoup plus puissant qu'aujourd'hui. Il ne sait faire que des ronds et des bonds dans l'eau. Il est malheureusement devenu célèbre pour son inutilité…cet étrange Pokémon a poussé de nombreux chercheurs a étudier son cas, mais aucune théorie plausible n'a été avancée.",
+      "height": "0.9",
+      "weight": "10",
+      "gender": "M/F",
       "special_capacities": [
-        { "title": "Brasier ", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
+        { "title": "Glissade", "description": "Double la vitesse sous la pluie."
         },
-        { "title": "Force Soleil ", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
+        { "title": "Phobique", "description": "Monte la Vitesse d'un cran si le Pokémon est touché par une attaque de type Spectre, Insecte ou Ténèbres."
         }],
-      "family": [ "#175" ]
+      "family": [ "#130" ]
     },
 
     { "id": "#143",
@@ -70,12 +78,17 @@
       "picture": "/pictures/ronflex.png",
       "href": "#",
       "description": "Ronflex est un Pokémon très pacifique, mais très paresseux aussi. Ses principales préoccupations de la journée sont dormir et manger. Son incroyable estomac est capable de digérer n'importe quoi, même le plus mortel des poisons. Ce Pokémon préfère faire la sieste plutôt que de se battre.",
+      "height": "2.1",
+      "weight": "460",
+      "gender": "M/F",
       "special_capacities": [
-        { "title": "Brasier ", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
+        { "title": "Isograisse", "description": "Les dégâts provoqués par les attaques des types Feu ou Glace sont divisés par 2."
         },
-        { "title": "Force Soleil ", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
+        { "title": "Vaccin", "description": "Votre Pokémon ne peut pas être empoisonné."
+        },
+        { "title": "Gloutonnerie", "description": "Le Pokémon utilise la baie tenue plus tôt dans le match."
         }],
-      "family": [ "#175" ]
+      "family": []
     },
 
     { "id": "#038",
@@ -84,12 +97,15 @@
       "picture": "/pictures/feunard.png",
       "href": "#",
       "description": "Feunard a longtemps été vénéré, car les gens pensaient qu'il était légendaire. C'est un Pokémon gracieux, dont les nombreuses queues se balancent au rythme de ses pas légers. Beaucoup de dresseurs convoitent Feunard, pour sa beauté et pour sa puissance au combat.",
+      "height": "1.1",
+      "weight": "19.9",
+      "gender": "M/F",
       "special_capacities": [
-        { "title": "Brasier ", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
+        { "title": "Torche", "description": "Les attaques feu reçues par ce Pokémon sont absorbées et augmentent la puissance de ses propres attaques feu."
         },
-        { "title": "Force Soleil ", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
+        { "title": "Sécheresse", "description": "Le Pokémon invoque le soleil dès son arrivée en jeu."
         }],
-      "family": [ "#175" ]
+      "family": [ "#037" ]
     },
 
     { "id": "#177",
@@ -98,11 +114,35 @@
       "picture": "/pictures/togetic.png",
       "href": "#",
       "description": "On raconte qu'autrefois, Magicarpe était beaucoup plus puissant qu'aujourd'hui. Il ne sait faire que des ronds et des bonds dans l'eau. Il est malheureusement devenu célèbre pour son inutilité…cet étrange Pokémon a poussé de nombreux chercheurs a étudier son cas, mais aucune théorie plausible n'a été avancée.",
+      "height": "0.6",
+      "weight": "3.2",
+      "gender": "M/F",
       "special_capacities": [
-        { "title": "Brasier ", "description": "Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.."
+        { "title": "Sérénité", "description": "Double la réussite aux effets des attaques lancées"
         },
-        { "title": "Force Soleil ", "description": "Si le soleil brille, les PV du Pokémon diminuent d'1/8ème à chaque tour, mais son Attaque Spéciale est multipliée par 1.5."
+        { "title": "Agitation", "description": "Augmente votre attaque de 50% mais baisse votre précision de 20%"
+        },
+        { "title": "Chanceux", "description": "Le taux de coup critique du Pokémon est augmenté d'un niveau."
         }],
-      "family": [ "#175" ]
+      "family": [ "#175", "#468" ]
+    },
+
+    { "id": "#468",
+      "name": "Togekiss",
+      "type": "faery",
+      "picture": "/pictures/togekiss.jpg",
+      "href": "#",
+      "description": "On raconte qu'autrefois, Magicarpe était beaucoup plus puissant qu'aujourd'hui. Il ne sait faire que des ronds et des bonds dans l'eau. Il est malheureusement devenu célèbre pour son inutilité…cet étrange Pokémon a poussé de nombreux chercheurs a étudier son cas, mais aucune théorie plausible n'a été avancée.",
+      "height": "1.5",
+      "weight": "38.0",
+      "gender": "M/F",
+      "special_capacities": [
+        { "title": "Sérénité", "description": "Double la réussite aux effets des attaques lancées"
+        },
+        { "title": "Agitation", "description": "Augmente votre attaque de 50% mais baisse votre précision de 20%"
+        },
+        { "title": "Chanceux", "description": "Le taux de coup critique du Pokémon est augmenté d'un niveau."
+        }],
+      "family": [ "#175", "#177" ]
     }
 ]}

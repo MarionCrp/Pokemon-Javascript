@@ -226,9 +226,8 @@ function set_show(selected_pokemon){
       evol_figure.appendChild(evol_picture);
       evol_figure.addEventListener("click",function(){
          pokemon_to_show = document.getElementById("pokemon_" + selected_pokemon.family[i].id)
-         current_pokemon_to_hide = document.getElementById("pokemon_" + selected_pokemon.id)
          active_link_from_picture(selected_pokemon.family[i].name);
-         hide(current_pokemon_to_hide)
+         hide_current_shown_pokemon();
          show(pokemon_to_show);
       });
       evol_picture.src = selected_pokemon.family[i].picture;
@@ -264,6 +263,13 @@ function hide(element){
     }
 }
 
+function hide_current_shown_pokemon(){
+  var current_pokemon_to_hide = document.getElementById("pokemon-show").getElementsByClassName("to-show")[0];
+  if(current_pokemon_to_hide){
+    hide(document.getElementById("pokemon-show").getElementsByClassName("to-show")[0]);
+  }
+}
+
 function show(element){
   element.classList.add('to-show');
   if(element.classList.contains('to-hide')){
@@ -279,6 +285,7 @@ window.addEventListener("load", function() {
   on_submit();
 });
 
+var errors = [];
 var QUERY_SIGNS = ["=", "<=", ">=", "<", ">"];
 var OR_AND_SIGN = ["&", "||"];
 var POKEMON_ATTRIBUTES_FOR_RESEARCH = ["id", "name", "type", "gender", "weight", "height", "special_capacity_name"]
