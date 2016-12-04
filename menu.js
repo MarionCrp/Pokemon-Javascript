@@ -86,7 +86,7 @@ function get_parameters(){
 function filter(parameters){
   requested_string = parameters['words'];
   // On sélectionne les lignes du tableau correspondant aux pokemon
-  rows = document.getElementById('pokedex').querySelectorAll("tr:not(.main_line)");
+  rows = document.getElementById('pokedex').querySelectorAll("#pokemon-index tr:not(.main_line)");
   parse_and_search_requested_string(requested_string, rows);
 }
 

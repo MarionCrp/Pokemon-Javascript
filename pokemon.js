@@ -49,14 +49,17 @@ function attribute_translate(attribute){
   if(["élément", "element", "élement", "type"].includes(attribute)) return "type";
   else {
     switch (attribute) {
+      case "id":
+        return "id";
+        break;
       case "nom":
-        return "name"
+        return "name";
         break;
       case "taille":
-        return "height"
+        return "height";
         break;
       case "poids":
-        return "weight"
+        return "weight";
         break;
       default:
         errors.push("Cet attribut n'existe pas");

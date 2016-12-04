@@ -34,10 +34,10 @@ function Condition(string) {
 }
 
 Condition.prototype.is_valid = function(){
-  if(["id", "name", "type", "special_capacity_name"].includes(this.key)){
+  if(["id", "name", "type"].includes(this.key)){
     return (["=", "NOT", "!="].includes(this.operator));
   } else if (["height", "weight"].includes(this.key)){
-    return (["=", "<", "<=", ">", ">=", "NOT"].includes(this.operator))
+    return (["=", "<", "<=", ">", ">=", ""].includes(this.operator))
   } else {
     return false;
   }

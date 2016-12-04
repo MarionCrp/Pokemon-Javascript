@@ -38,7 +38,7 @@ section, aside {
   padding: 20px;
 }
 
-#pokemon-index, #pokemon-show {
+#pokemon-index, #pokemon-show, #search_form {
   margin:70px 100px;
 }
 
@@ -65,8 +65,11 @@ nav div {
 
 #menu-index:hover ul, #menu-pokemons:hover ul {
   display: block;
-  height: 150px;
+}
+
+#menu-pokemons li, #menu-index li {
   background-color: #1E2F34;
+  padding: 5px;
 }
 
 nav ul {
@@ -79,6 +82,12 @@ nav ul {
 .active-link, a:hover {
   color: #DDD8C4;
   font-weight: bold
+}
+
+/* FORMULAIRE RECHERCHE */
+#search_form{
+  display: flex;
+  justify-content: space-around;
 }
 
 /* TABLE */

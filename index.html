@@ -15,19 +15,6 @@
   </head>
   <body>
     <nav>
-
-      <div id="search_form">
-        <!-- <form class="" action="#" method=""> -->
-          <input type="text" name="word" value="">
-          <select name="type">
-            <option value="all" selected>Tous</option>
-          </select>
-          <input type="submit" name="chercher" value="Chercher">
-          <input type="submit" name="reinitialize" value="Reinitialiser">
-
-        <!-- </form> -->
-      </div>
-
       <div class="menuItem" id="menu-index"> Accueil
         <ul>
           <li id="pokedex_link" class="menuElement"><a href="#" class="active-link">Pokedex</a></li>
@@ -35,10 +22,27 @@
       </div>
       <div class="menuItem" id="menu-pokemons"> Mes Pokemon
         <ul>
-
         </ul>
       </div>
     </nav>
+    <section id="search_form">
+      <div id="inputs">
+        <input type="text" name="word" value="">
+        <select name="type">
+          <option value="all" selected>Tous</option>
+        </select>
+        <input type="submit" name="chercher" value="Chercher"> <br>
+        <input type="submit" name="reinitialize" value="Reinitialiser">
+      </div>
+      <div id="search-instruction">
+        <p>Recherche complète dans l'index : taper <b>UN SEUL</b> mot.</p>
+        <p>Requête conditionnelle : "ex : nom = togepi" <br>
+          Liste des attributs de recherche : nom, id 
+
+        </p>
+      </div>
+    </section>
+
 
     <div id="pokemon-index">
       <div class="page-body">
