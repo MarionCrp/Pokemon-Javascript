@@ -35,9 +35,9 @@ function Condition(string) {
 
 Condition.prototype.is_valid = function(){
   if(["id", "name", "type", "special_capacity_name"].includes(this.key)){
-    return this.operator == "=";
+    return (["=", "NOT", "!="].includes(this.operator));
   } else if (["height", "weight"].includes(this.key)){
-    return (["=", "<", "<=", ">", ">="].includes(this.operator))
+    return (["=", "<", "<=", ">", ">=", "NOT"].includes(this.operator))
   } else {
     return false;
   }
@@ -70,6 +70,9 @@ PokemonRow.prototype.valid_the_condition = function(condition){
         case "=":
           return concerned_cell_content == condition_value;
           break;
+        case "NOT":
+          return !(concerned_cell_content == condition_value);
+          break;
         case "<":
           return concerned_cell_content < condition_value;
           break;
@@ -88,7 +91,11 @@ PokemonRow.prototype.valid_the_condition = function(condition){
           return null;
       }
     } else {
-      return this[condition.key + "_content"].includes(condition.value);
+      if(condition.operator == "="){
+        return this[condition.key + "_content"].includes(condition.value);
+      } else if(condition.operator == "NOT" || condition.operator == "!="){
+        return !(this[condition.key + "_content"].includes(condition.value));
+      }
     }
   } else {
       errors.push("Erreur ! La condition n'est pas valide!");
@@ -150,6 +157,18 @@ function parse_and_search_requested_string(requested_string, pokemon_rows){
                 row.hide();
                 break;
               }
+            }
+          }
+          else if (multi_conditions.operator == "||"){
+            var is_valid = false;
+            for(var j = 0; j < multi_conditions.conditions.length; j++){
+              if(row.valid_the_condition(multi_conditions.conditions[j])){
+                is_valid = true;
+                break;
+              }
+            }
+            if(is_valid == false){
+              row.hide();
             }
           }
         }

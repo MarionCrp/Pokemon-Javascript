@@ -1,12 +1,11 @@
 // DATAS
-function Pokemon(id, name, type, picture, href = null, description = null, gender = null, weight = null, height = null, special_capacities = [], family = []){
+function Pokemon(id, name, type, picture, href = null, description = null, weight = null, height = null, special_capacities = [], family = []){
   this.id = id;
   this.href = href;
   this.name = name;
   this.type = type;
   this.picture = picture;
   this.description = description;
-  this.gender = gender;
   this.weight = weight;
   this.height = height;
   nb_of_capacities = special_capacities.length;

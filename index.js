@@ -34,7 +34,6 @@ function set_pokedex(data_pokemons){
                                         attributes.picture,
                                         attributes.href,
                                         attributes.description,
-                                        attributes.gender,
                                         attributes.weight,
                                         attributes.height,
                                         attributes.special_capacities,
@@ -170,14 +169,12 @@ function set_show(selected_pokemon){
   item_id.innerHTML = "<spans>N°: </spans>" + selected_pokemon.id;
   item_type = document.createElement('li');
   item_type.innerHTML = "<spans>Type: </spans>" + type_translate(selected_pokemon.type);
-  item_gender = document.createElement('li');
-  item_gender.innerHTML = "<spans>Sexe: </spans>" + selected_pokemon.gender;
   item_height = document.createElement('li');
   item_height.innerHTML = "<spans>Taille: </spans>" + selected_pokemon.height;
   item_weight = document.createElement('li');
   item_weight.innerHTML = "<spans>Poids: </spans>" + selected_pokemon.weight;
 
-  for(i in item_attributes = [item_id, item_type, item_gender, item_height, item_weight]){
+  for(i in item_attributes = [item_id, item_type, item_height, item_weight]){
     ul_carac.appendChild(item_attributes[i]);
   }
 
@@ -313,4 +310,4 @@ window.addEventListener("load", function() {
 var errors = [];
 var QUERY_SIGNS = ["=", "<=", ">=", "<", ">"];
 var OR_AND_SIGN = ["&", "||"];
-var POKEMON_ATTRIBUTES_FOR_RESEARCH = ["id", "name", "type", "gender", "weight", "height", "special_capacity_name"]
+var POKEMON_ATTRIBUTES_FOR_RESEARCH = ["id", "name", "type", "weight", "height", "special_capacity_name"]
