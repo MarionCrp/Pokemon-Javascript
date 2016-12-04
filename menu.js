@@ -36,9 +36,8 @@ function pokedex_link(){
     while(document.getElementsByClassName('to-show').length > 0){
       hide(document.getElementsByClassName('to-show')[0]);
     }
-
     show(document.getElementById('pokemon-index'));
-    show_all_pokemon_in_pokedex();
+    on_submit();
   });
 }
 
@@ -94,12 +93,16 @@ function filter(parameters){
 function on_submit(){
   // On vide notre tableau d'erreur au cas où il en contiendrait.
   errors = [];
-  submit_button = document.getElementsByTagName('input').chercher;
-  submit_button.addEventListener('click', function(){
   hide_current_shown_pokemon();
   show(document.getElementById("pokemon-index"));
   parameters = get_parameters();
   filter(parameters);
   if(errors.length > 0) alert(errors[0]);
-  });
+}
+
+function on_reinitialize(){
+  document.querySelector('select').options[0].selected = true;
+  document.querySelector('input');
+  document.getElementsByName('word')[0].value = "";
+  show_all_pokemon_in_pokedex();
 }

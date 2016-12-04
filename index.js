@@ -296,7 +296,18 @@ var parameters;
 window.addEventListener("load", function() {
   parseJson();
   pokedex_link();
-  on_submit();
+
+  // EVENT LISTNER
+  var submit_button = document.getElementsByTagName('input').chercher;
+  submit_button.addEventListener('click', function(){
+    on_submit();
+  });
+
+  var reinitialize_button = document.getElementsByTagName('input').reinitialize;
+  reinitialize_button.addEventListener('click', function(){
+    on_reinitialize();
+  });
+
 });
 
 var errors = [];
