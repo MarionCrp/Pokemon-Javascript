@@ -12,7 +12,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
-h1, .pokemon-show h2 {
+h1, .pokemon_details h2 {
   color: #A3C9A8;
   font-size: 2em;
 }
@@ -38,7 +38,7 @@ section, aside {
   padding: 20px;
 }
 
-#pokemon-index, #pokemon-show, #search_form {
+#pokemon-index, #pokemon_details, #search_form {
   margin:70px 100px;
 }
 
@@ -90,6 +90,10 @@ nav ul {
   justify-content: space-around;
 }
 
+#search-instruction td, #search-instruction th {
+  padding: 2px;
+}
+
 /* TABLE */
 
 table {
@@ -107,17 +111,17 @@ td {
   text-align: center;
 }
 
-td:nth-child(4){
+#pokemon-index td:nth-child(4){
   font-weight: bold;
   text-transform: uppercase;
   color: #1E2F34;
 }
 
-td:last-child {
+#pokemon-index td:last-child {
   text-align: justify;
 }
 
-caption {
+#pokemon-index caption {
   font-size: 0.75em;
   text-align: right;
     color: #DDD8C4;
@@ -125,7 +129,7 @@ caption {
 
 /* POKEMON TYPE*/
 
-td:nth-child(2){
+#pokemon-index td:nth-child(2){
   font-weight: bold;
   background-repeat: no-repeat;
   background-position: center;
@@ -133,7 +137,7 @@ td:nth-child(2){
   bottom: 15px;
 }
 
-td:nth-child(2) span {
+#pokemon-index td:nth-child(2) span {
   position:relative;
   top: 45px;
   font-size: 1.1em;

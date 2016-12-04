@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="css/style.css" media="screen">
     <link rel="stylesheet" href="css/style_smartphone.css" media="(max-device-width : 480px)">
     <link rel="stylesheet" href="css/style_print.css" media="print">
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="build_elements.js"></script>
     <script type="text/javascript" src="pokemon.js"></script>
-    <script type="text/javascript" src="parser.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="menu.js"></script>
+    <script type="text/javascript" src="filter.js"></script>
     <title>Pokedex</title>
   </head>
   <body>
@@ -35,11 +35,32 @@
         <input type="submit" name="reinitialize" value="Reinitialiser">
       </div>
       <div id="search-instruction">
-        <p>Recherche complète dans l'index : taper <b>UN SEUL</b> mot.</p>
-        <p>Requête conditionnelle : "ex : nom = togepi" <br>
-          Liste des attributs de recherche : nom, id 
-
-        </p>
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>Attributs</th>
+            <th>Opérateurs</th>
+          </tr>
+          <tr>
+            <td>Recherche simple</td>
+            <td>nom, id, type</td>
+            <td> =   !=   NOT</td>
+          </tr>
+          <tr>
+            <td>Recherche numérique de comparaison</td>
+            <td>taille, poids</td>
+            <td> =   <   >   <=   >=   NOT   != </td>
+          </tr>
+          <tr>
+            <td>Rechercher un mot</td>
+            <td colspan="2"> <b> UN SEUL </b> mot</td>
+          </tr>
+          <tr>
+            <td>Conditions multiples</td>
+            <td> ex: type = eau & poids < 5 </td>
+            <td> & (pour ET) ,  ||  (pour OU) </td>
+          </tr>
+        </table>
       </div>
     </section>
 
@@ -51,7 +72,7 @@
           <section id="presentation_pokedex">
             <h2>Mais qu'est-ce qu'un Pokédex?</h2>
             <p>
-              Le pokedex contient les informations sur les pokemons que tu as rencontrés! Voici la liste des <span id="pokemon_nb"></span> premiers Pokémon :
+              Le pokedex contient les informations sur les pokemons que tu as rencontrés!
             </p>
           </section>
           <section id="pokedex">
@@ -73,7 +94,7 @@
       </div>
     </div>
 
-    <div id="pokemon-show">
+    <div id="pokemon_details">
 
     </div>
     <footer><p id="copyright"> Marion CRAIPEAU</p></footer>
