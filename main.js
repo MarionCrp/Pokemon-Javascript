@@ -7,6 +7,8 @@ window.addEventListener("load", function() {
     // BOUTONS DU FORMULAIRE DE RECHERCHE :
     var submit_button = document.getElementsByTagName('input').chercher;
     var reinitialize_button = document.getElementsByTagName('input').reinitialize;
+    var index_button = document.getElementsByTagName('button').retour_index;
+
 
   // On parle le JSON et on créé les objets sur la page.
   parseJson();
@@ -17,8 +19,16 @@ window.addEventListener("load", function() {
   submit_button.addEventListener('click', function(){
     on_filter_submit(); // menu.js
   });
+  document.getElementsByTagName('input')[0].addEventListener('keydown', function(event){
+    if(event.keyCode == 13) {
+      on_filter_submit();
+    }
+  });
   reinitialize_button.addEventListener('click', function(){
     on_reinitialize(); // menu.js
+  });
+  index_button.addEventListener('click', function(){
+    go_back_index(); // menu.js
   });
 });
 
@@ -148,15 +158,19 @@ function active_link_from_picture(pokemon_name){
 function on_click_pokedex_link(){
   // Lorsque l'utilisateur clique sur le lien vers le pokedex
   document.getElementById('pokedex_link').getElementsByTagName('a')[0].addEventListener('click', function() {
-    active_link(this);
-
-    // On réinitialise la page en cachant tous les éléments éventuellement visible sur la page et réaffiche que le pokedex (pokemon-index)
-    while(document.getElementsByClassName('to-show').length > 0){
-      hide(document.getElementsByClassName('to-show')[0]);
-    }
-    show(document.getElementById('pokemon-index'));
-
-    //
-    on_filter_submit();
+    go_back_index();
   });
+}
+
+function go_back_index(){
+  active_link(document.getElementById('pokedex_link').getElementsByTagName('a')[0]);
+  // On réinitialise la page en cachant tous les éléments éventuellement visible sur la page et réaffiche que le pokedex (pokemon-index)
+  while(document.getElementsByClassName('to-show').length > 0){
+    hide(document.getElementsByClassName('to-show')[0]);
+  }
+  hide(document.getElementsByTagName('button').retour_index);
+  show(document.getElementById('pokemon-index'));
+
+  //
+  on_filter_submit();
 }

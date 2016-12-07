@@ -38,6 +38,16 @@ section, aside {
   padding: 20px;
 }
 
+#retourindex {
+  display: block;
+  width: 200px;
+  margin: auto;
+}
+
+#retourindex button {
+  font-size: 1.2em;
+}
+
 #pokemon-index, #pokemon_details, #search_form {
   margin:70px 100px;
 }

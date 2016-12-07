@@ -49,6 +49,7 @@ function set_property_row_attributes(property, cell, pokemon){
         // On cache l'index, et on affiche le détail du pokemon.
         hide(document.getElementById("pokemon-index"));
         show(pokemon_to_show);
+        show(document.getElementsByTagName('button').retour_index);
         // On met en actif le lien correspondant au pokemon affiché.
         active_link_from_picture(pokemon.name); // main.js
       });
